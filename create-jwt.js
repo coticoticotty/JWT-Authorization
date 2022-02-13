@@ -1,3 +1,4 @@
+// JWTの生成
 const crypto = require('crypto') // cryptoはNode.jsが提供する暗号化のモジュール
 
 const base64 = json => {
@@ -25,4 +26,4 @@ const unsignedToken = `${base64(header)}.${base64(payload)}`
 const signature = HMAC_SHA256(key, unsignedToken)
 const jwt = `${unsignedToken}.${signature}`
 
-console.log(jwt)
+console.log('jwt: ' + jwt)
